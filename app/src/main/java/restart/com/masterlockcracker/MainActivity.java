@@ -2,9 +2,6 @@ package restart.com.masterlockcracker;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
-
-import java.util.Arrays;
 
 /**
  * The basic concept and algorithm for this program was taken from Samy Kamkar. In this program
@@ -46,10 +43,6 @@ public class MainActivity extends Activity {
             if (x == 0 || ((third[x - 1] + 2) % 40 != tmp && (third[x - 1] - 2) % 40 != tmp))
                 second[i] = tmp;
         }
-
-        Log.d("restart.com.masterlock", String.valueOf(rl));
-        Log.d("restart.com.masterlock", Arrays.toString(second));
-        Log.d("restart.com.masterlock", Arrays.toString(third));
     }
 }
 
