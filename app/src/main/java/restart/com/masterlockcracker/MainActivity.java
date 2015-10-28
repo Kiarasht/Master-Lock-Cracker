@@ -64,14 +64,18 @@ public class MainActivity extends Activity {
     }
 
     private int parse() {
-        if (r1c2.getText().toString().trim().length() == 0 || Integer.parseInt(r1c2.getText().toString()) >= 11) {
+        if (r1c2.getText().toString().trim().length() == 0) {
             return 1;
-        }
-        if (r2c2.getText().toString().trim().length() == 0 || Integer.parseInt(r2c2.getText().toString()) >= 11) {
+        } else if (Integer.parseInt(r1c2.getText().toString()) >= 11) {
             return 2;
         }
-        if (r3c2.getText().toString().trim().length() == 0) {
+        if (r2c2.getText().toString().trim().length() == 0) {
             return 3;
+        } else if (Integer.parseInt(r2c2.getText().toString()) >= 11) {
+            return 4;
+        }
+        if (r3c2.getText().toString().trim().length() == 0) {
+            return 5;
         }
         return 0;
     }
@@ -91,11 +95,18 @@ public class MainActivity extends Activity {
 
     private void error(int result) {
         if (result == 1) {
-            Toast.makeText(getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "1st Lock Position can not be empty.", Toast.LENGTH_SHORT).show();
         } else if (result == 2) {
-            Toast.makeText(getApplicationContext(), "Hello2", Toast.LENGTH_SHORT).show();
-        } else
-            Toast.makeText(getApplicationContext(), "Hello3", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "1st Lock Position can not be over 10.", Toast.LENGTH_SHORT).show();
+        }
+        if (result == 3) {
+            Toast.makeText(getApplicationContext(), "2st Lock Position can not be empty.", Toast.LENGTH_SHORT).show();
+        } else if (result == 4) {
+            Toast.makeText(getApplicationContext(), "2st Lock Position can not be over 10.", Toast.LENGTH_SHORT).show();
+        }
+        if (result == 5) {
+            Toast.makeText(getApplicationContext(), "Resistance Location can not be empty.", Toast.LENGTH_SHORT).show();
+        }
     }
 }
 
