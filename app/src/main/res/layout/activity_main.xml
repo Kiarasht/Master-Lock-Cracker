@@ -80,6 +80,7 @@
         android:layout_below="@+id/r3c2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:onClick="buttonOnClick"
         android:text="@string/r4c1" />
 
     <TextView
