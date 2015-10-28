@@ -1,7 +1,6 @@
 package restart.com.masterlockcracker;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,7 +12,8 @@ import java.util.Arrays;
 /**
  * The basic concept and algorithm for this program was taken from Samy Kamkar. In this program
  * it the language been converted to java / android version so it could be more accessible. The
- * entire code was not released but only a part of it. The rest was created here.
+ * entire original code was not released but only a part of it. The rest was created here for
+ * reasons.
  * http://null-byte.wonderhowto.com/how-to/crack-any-master-combination-lock-8-tries-less-using-calculator-0161629/
  */
 public class MainActivity extends Activity {
@@ -39,14 +39,14 @@ public class MainActivity extends Activity {
     }
 
     private void crack(int x) {
-        double[] second = new double[100];
-        double[] third = new double[100];
+        int[] second = new int[100];
+        int[] third = new int[100];
 
-        double l1 = 2;
-        double l2 = 9;
+        int l1 = Integer.parseInt(r1c2.getText().toString());
+        int l2 = Integer.parseInt(r2c2.getText().toString());
         int rl = ((int) Math.ceil(Integer.parseInt(r3c2.getText().toString())) + 5) % 40;
 
-        double mod = rl % 4;
+        int mod = rl % 4;
 
         for (int i = 0; i < 4; i++) {
             if (((10 * i) + l1) % 4 == mod)
@@ -57,7 +57,7 @@ public class MainActivity extends Activity {
         }
 
         for (int i = 0; i < 10; i++) {
-            double tmp = ((mod + 2) % 4) + (4 * i);
+            int tmp = ((mod + 2) % 4) + (4 * i);
 
             if (x == 0 || ((third[x - 1] + 2) % 40 != tmp && (third[x - 1] - 2) % 40 != tmp))
                 second[i] = tmp;
@@ -65,8 +65,23 @@ public class MainActivity extends Activity {
 
         r5c2.setText(String.valueOf(rl));
 
-        Log.d("restart.com.masterlock", Arrays.toString(second));
-        Log.d("restart.com.masterlock", Arrays.toString(third));
+        StringBuilder builder = new StringBuilder();
+        for (int i = 0; i < second.length; i++) {
+            if ((i > 0 && second[i] != 0) || i == 0) {
+                double s = second[i];
+                int s2 = (int) s;
+                builder.append(s2).append(", ");
+            }
+        }
+        r6c2.setText(String.valueOf(builder));
+
+        builder = new StringBuilder();
+        for (int Third : third) {
+            if (Third != 0) {
+                builder.append(Third).append(", ");
+            }
+        }
+        r7c2.setText(String.valueOf(builder));
     }
 
     private int parse() {
