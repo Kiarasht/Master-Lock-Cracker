@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Master Lock Cracker</string>
+    <string name="r1c1">1st Locked Position</string>
+    <string name="r1c2"># under 11</string>
+    <string name="r2c1">2nd Locked Position</string>
+    <string name="r2c2"># under 11</string>
+    <string name="r3c1">Resistance Location</string>
+    <string name="r3c2"># whole or half</string>
+    <string name="r4c1">Find Combos</string>
+    <string name="r5c1">First Digit</string>
+    <string name="r5c2"># under 11</string>
+    <string name="r6c2"># under 11</string>
+    <string name="r6c1">2nd Digit(s)</string>
+    <string name="r7c2"># under 11</string>
+    <string name="r7c1">3rd Digit(s)</string>
 </resources>

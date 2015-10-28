@@ -5,7 +5,8 @@ import android.os.Bundle;
 
 /**
  * The basic concept and algorithm for this program was taken from Samy Kamkar. In this program
- * it the language been converted to java / android version so it could be more accessible.
+ * it the language been converted to java / android version so it could be more accessible. But
+ * remeber that the entire code was not released but only a part of it. The rest was created here.
  * http://null-byte.wonderhowto.com/how-to/crack-any-master-combination-lock-8-tries-less-using-calculator-0161629/
  */
 public class MainActivity extends Activity {
@@ -14,6 +15,8 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         int x = 0;
         crack(x);

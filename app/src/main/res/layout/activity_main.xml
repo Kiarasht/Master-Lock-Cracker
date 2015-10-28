@@ -10,154 +10,154 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/r1c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText"
+        android:layout_alignBottom="@+id/r1c2"
         android:layout_alignParentStart="true"
-        android:text="1st Locked Position"
+        android:text="@string/r1c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/r1c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/space"
         android:ems="10"
-        android:hint="# under 11"
+        android:hint="@string/r1c2"
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/r2c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/r1c1"
         android:layout_marginTop="50dp"
-        android:text="2nd Locked Position"
+        android:text="@string/r2c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/r2c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_alignEnd="@+id/editText"
-        android:layout_alignStart="@+id/editText"
-        android:layout_toEndOf="@+id/button"
+        android:layout_alignBottom="@+id/r2c1"
+        android:layout_alignEnd="@+id/r1c2"
+        android:layout_alignStart="@+id/r1c2"
+        android:layout_toEndOf="@+id/r4c1"
         android:ems="10"
-        android:hint="# under 11"
+        android:hint="@string/r2c2"
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/r3c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/textView2"
+        android:layout_below="@+id/r2c1"
         android:layout_marginTop="50dp"
-        android:text="Resistance Location"
+        android:text="@string/r3c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/r3c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignBottom="@+id/r3c1"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/editText2"
-        android:layout_toEndOf="@+id/button"
+        android:layout_alignStart="@+id/r2c2"
+        android:layout_toEndOf="@+id/r4c1"
         android:ems="10"
-        android:hint="# under 11"
+        android:hint="@string/r3c2"
         android:inputType="number" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/r4c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignWithParentIfMissing="false"
-        android:layout_below="@+id/editText3"
+        android:layout_below="@+id/r3c2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:text="Find Combos" />
+        android:text="@string/r4c1" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/r5c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/button"
+        android:layout_below="@+id/r4c1"
         android:layout_marginTop="57dp"
         android:gravity="center"
-        android:text="First Digit"
+        android:text="@string/r5c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/r5c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView4"
-        android:layout_alignStart="@+id/editText3"
-        android:layout_toEndOf="@+id/textView3"
+        android:layout_alignBottom="@+id/r5c1"
+        android:layout_alignStart="@+id/r3c2"
+        android:layout_toEndOf="@+id/r3c1"
         android:ems="10"
-        android:hint="# under 11"
+        android:hint="@string/r5c2"
         android:inputType="number" />
 
+    <TextView
+        android:id="@+id/r6c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/r6c2"
+        android:layout_alignStart="@+id/r5c1"
+        android:text="@string/r6c1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/r6c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/editText4"
-        android:layout_below="@+id/editText4"
+        android:layout_alignStart="@+id/r5c2"
+        android:layout_below="@+id/r5c2"
         android:layout_marginTop="35dp"
         android:ems="10"
-        android:hint="# under 11"
+        android:hint="@string/r6c2"
         android:inputType="number" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/r7c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText5"
-        android:layout_alignStart="@+id/textView4"
-        android:text="2nd Digit(s)"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_below="@+id/textView5"
+        android:layout_alignStart="@+id/r6c1"
+        android:layout_below="@+id/r6c1"
         android:layout_marginTop="50dp"
-        android:text="3rd Digit(s)"
+        android:text="@string/r7c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/r7c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignBottom="@+id/r7c1"
         android:layout_toEndOf="@+id/space2"
         android:ems="10"
-        android:hint="# under 11"
+        android:hint="@string/r7c2"
         android:inputType="number" />
 
     <Space
         android:id="@+id/space"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignBottom="@+id/r3c1"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/textView2" />
+        android:layout_toEndOf="@+id/r2c1" />
 
     <Space
         android:id="@+id/space2"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignBottom="@+id/editText6"
-        android:layout_alignTop="@+id/editText4"
-        android:layout_toEndOf="@+id/textView3" />
+        android:layout_alignBottom="@+id/r7c2"
+        android:layout_alignTop="@+id/r5c2"
+        android:layout_toEndOf="@+id/r3c1" />
 
 </RelativeLayout>
