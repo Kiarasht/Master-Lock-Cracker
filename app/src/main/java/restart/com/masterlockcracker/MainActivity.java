@@ -1,12 +1,17 @@
 package restart.com.masterlockcracker;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 
 import java.util.Arrays;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * The basic concept and algorithm for this program was taken from Samy Kamkar. In this program
+ * it the language been converted to java / android version so it could be more accessible.
+ * http://null-byte.wonderhowto.com/how-to/crack-any-master-combination-lock-8-tries-less-using-calculator-0161629/
+ */
+public class MainActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
