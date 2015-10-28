@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Arrays;
+
 /**
  * The basic concept and algorithm for this program was taken from Samy Kamkar. In this program
  * it the language been converted to java / android version so it could be more accessible. The
@@ -18,6 +20,9 @@ public class MainActivity extends Activity {
     private EditText r1c2;
     private EditText r2c2;
     private EditText r3c2;
+    private EditText r5c2;
+    private EditText r6c2;
+    private EditText r7c2;
 
 
     @Override
@@ -28,13 +33,9 @@ public class MainActivity extends Activity {
         r1c2 = (EditText) findViewById(R.id.r1c2);
         r2c2 = (EditText) findViewById(R.id.r2c2);
         r3c2 = (EditText) findViewById(R.id.r3c2);
-
-        String l1 = r1c2.getText().toString();
-        String l2 = r2c2.getText().toString();
-        String r1 = r3c2.getText().toString();
-
-        int x = 0;
-        crack(x);
+        r5c2 = (EditText) findViewById(R.id.r5c2);
+        r6c2 = (EditText) findViewById(R.id.r6c2);
+        r7c2 = (EditText) findViewById(R.id.r7c2);
     }
 
     private void crack(int x) {
@@ -43,7 +44,7 @@ public class MainActivity extends Activity {
 
         double l1 = 2;
         double l2 = 9;
-        double rl = (Math.ceil(1) + 5) % 40;
+        int rl = ((int) Math.ceil(Integer.parseInt(r3c2.getText().toString())) + 5) % 40;
 
         double mod = rl % 4;
 
@@ -61,6 +62,11 @@ public class MainActivity extends Activity {
             if (x == 0 || ((third[x - 1] + 2) % 40 != tmp && (third[x - 1] - 2) % 40 != tmp))
                 second[i] = tmp;
         }
+
+        r5c2.setText(String.valueOf(rl));
+
+        Log.d("restart.com.masterlock", Arrays.toString(second));
+        Log.d("restart.com.masterlock", Arrays.toString(third));
     }
 
     private int parse() {
@@ -83,14 +89,10 @@ public class MainActivity extends Activity {
     public void buttonOnClick(View v) {
         int result = parse();
         if (result == 0) {
-            success();
+            crack(result);
         } else {
             error(result);
         }
-    }
-
-    private void success() {
-
     }
 
     private void error(int result) {
