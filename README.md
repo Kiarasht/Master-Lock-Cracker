@@ -1,4 +1,4 @@
-# Master-Lock-Cracker
+# Master Lock Cracker
 
 # Status: Finished
 
