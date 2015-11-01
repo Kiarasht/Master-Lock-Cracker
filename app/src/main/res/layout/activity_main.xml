@@ -93,37 +93,35 @@
         android:text="@string/r5c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
+    <TextView
         android:id="@+id/r5c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/r5c1"
-        android:layout_alignStart="@+id/r3c2"
         android:layout_toEndOf="@+id/r3c1"
         android:ems="10"
-        android:hint="@string/r5c2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_alignStart="@+id/r6c2" />
 
     <TextView
         android:id="@+id/r6c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/r6c2"
-        android:layout_alignStart="@+id/r5c1"
         android:text="@string/r6c1"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_alignBottom="@+id/r6c2"
+        android:layout_alignParentStart="true" />
 
-    <EditText
+    <TextView
         android:id="@+id/r6c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignStart="@+id/r5c2"
-        android:layout_below="@+id/r5c2"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="61dp"
         android:ems="10"
-        android:hint="@string/r6c2"
-        android:inputType="number" />
+        android:inputType="number"
+        android:layout_below="@+id/r5c2"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/space2" />
 
     <TextView
         android:id="@+id/r7c1"
@@ -135,14 +133,13 @@
         android:text="@string/r7c1"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <EditText
+    <TextView
         android:id="@+id/r7c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/r7c1"
         android:layout_toEndOf="@+id/space2"
         android:ems="10"
-        android:hint="@string/r7c2"
         android:inputType="number" />
 
     <Space
@@ -157,8 +154,8 @@
         android:id="@+id/space2"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignBottom="@+id/r7c2"
-        android:layout_alignTop="@+id/r5c2"
-        android:layout_toEndOf="@+id/r3c1" />
+        android:layout_alignBottom="@+id/r7c1"
+        android:layout_alignStart="@+id/r4c1"
+        android:layout_alignTop="@+id/r5c1" />
 
 </RelativeLayout>

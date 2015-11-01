@@ -2,12 +2,10 @@ package restart.com.masterlockcracker;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Arrays;
 
 /**
  * The basic concept and algorithm for this program was taken from Samy Kamkar. In this program
@@ -16,13 +14,14 @@ import java.util.Arrays;
  * reasons.
  * http://null-byte.wonderhowto.com/how-to/crack-any-master-combination-lock-8-tries-less-using-calculator-0161629/
  */
+
 public class MainActivity extends Activity {
     private EditText r1c2;
     private EditText r2c2;
     private EditText r3c2;
-    private EditText r5c2;
-    private EditText r6c2;
-    private EditText r7c2;
+    private TextView r5c2;
+    private TextView r6c2;
+    private TextView r7c2;
 
 
     @Override
@@ -33,9 +32,9 @@ public class MainActivity extends Activity {
         r1c2 = (EditText) findViewById(R.id.r1c2);
         r2c2 = (EditText) findViewById(R.id.r2c2);
         r3c2 = (EditText) findViewById(R.id.r3c2);
-        r5c2 = (EditText) findViewById(R.id.r5c2);
-        r6c2 = (EditText) findViewById(R.id.r6c2);
-        r7c2 = (EditText) findViewById(R.id.r7c2);
+        r5c2 = (TextView) findViewById(R.id.r5c2);
+        r6c2 = (TextView) findViewById(R.id.r6c2);
+        r7c2 = (TextView) findViewById(R.id.r7c2);
     }
 
     private void crack(int x) {
@@ -67,18 +66,22 @@ public class MainActivity extends Activity {
 
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < second.length; i++) {
+            if (i > 0 && second[i] != 0){
+                builder.append(", ");
+            }
             if ((i > 0 && second[i] != 0) || i == 0) {
-                double s = second[i];
-                int s2 = (int) s;
-                builder.append(s2).append(", ");
+                builder.append(second[i]);
             }
         }
         r6c2.setText(String.valueOf(builder));
 
         builder = new StringBuilder();
-        for (int Third : third) {
-            if (Third != 0) {
-                builder.append(Third).append(", ");
+        for (int i = 0; i < third.length; i++) {
+            if (i > 1 && third[i] != 0){
+                builder.append(", ");
+            }
+            if (third[i] != 0) {
+                builder.append(third[i]);
             }
         }
         r7c2.setText(String.valueOf(builder));
