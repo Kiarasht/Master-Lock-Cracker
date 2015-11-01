@@ -29,6 +29,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        /**
+         * r = row
+         * c = column
+         * Each of the text or view variable point in regards to their position.
+         */
         r1c2 = (EditText) findViewById(R.id.r1c2);
         r2c2 = (EditText) findViewById(R.id.r2c2);
         r3c2 = (EditText) findViewById(R.id.r3c2);
@@ -37,16 +42,34 @@ public class MainActivity extends Activity {
         r7c2 = (TextView) findViewById(R.id.r7c2);
     }
 
+    /**
+     * Takes the numbers from the three EditTexts and starts the algorithm. At this point
+     * all the fields have been filled with the correct values.
+     *
+     * @param x Zero
+     */
     private void crack(int x) {
+        /**
+         * The first digit is always and always will result in one number. Second and third
+         * digit however may be somewhere from 2 to 25. We will store them in an array.
+         */
         int[] second = new int[100];
         int[] third = new int[100];
 
+        /**
+         * l1 = Lock position 1
+         * l2 = Lock position 2
+         * r1 = Resistance position 1. The first digit is simply resistance location + 5.
+         */
         int l1 = Integer.parseInt(r1c2.getText().toString());
         int l2 = Integer.parseInt(r2c2.getText().toString());
         int rl = ((int) Math.ceil(Integer.parseInt(r3c2.getText().toString())) + 5) % 40;
 
         int mod = rl % 4;
 
+        /**
+         * List of possible combinations for the third digit.
+         */
         for (int i = 0; i < 4; i++) {
             if (((10 * i) + l1) % 4 == mod)
                 third[i] = ((10 * i) + l1);
@@ -55,6 +78,9 @@ public class MainActivity extends Activity {
                 third[i] = ((10 * i) + l2);
         }
 
+        /**
+         * List of possible combinations for the second digit.
+         */
         for (int i = 0; i < 10; i++) {
             int tmp = ((mod + 2) % 4) + (4 * i);
 
@@ -62,31 +88,44 @@ public class MainActivity extends Activity {
                 second[i] = tmp;
         }
 
-        r5c2.setText(String.valueOf(rl));
-
+        /**
+         * Build the results from the arrays by parsing them first removing any
+         * additional unneeded results and divide them with a comma.
+         */
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < second.length; i++) {
-            if (i > 0 && second[i] != 0){
+            if (i > 0 && second[i] != 0) {
                 builder.append(", ");
             }
             if ((i > 0 && second[i] != 0) || i == 0) {
                 builder.append(second[i]);
             }
         }
-        r6c2.setText(String.valueOf(builder));
 
-        builder = new StringBuilder();
+        StringBuilder builder2 = new StringBuilder();
         for (int i = 0; i < third.length; i++) {
-            if (i > 1 && third[i] != 0){
-                builder.append(", ");
+            if (i > 0 && third[i] != 0) {
+                builder2.append(", ");
             }
             if (third[i] != 0) {
-                builder.append(third[i]);
+                builder2.append(third[i]);
             }
         }
-        r7c2.setText(String.valueOf(builder));
+
+        /**
+         * Set all the results to the TextViews
+         */
+        r5c2.setText(String.valueOf(rl));
+        r6c2.setText(String.valueOf(builder));
+        r7c2.setText(String.valueOf(builder2));
     }
 
+    /**
+     * Checks the fields of the EditText by checking if they are empty first and then
+     * if they are within the allowed range.
+     *
+     * @return Error code
+     */
     private int parse() {
         if (r1c2.getText().toString().trim().length() == 0) {
             return 1;
@@ -104,6 +143,11 @@ public class MainActivity extends Activity {
         return 0;
     }
 
+    /**
+     * Either starts the calculations or waits on user to enter good data
+     *
+     * @param v View
+     */
     public void buttonOnClick(View v) {
         int result = parse();
         if (result == 0) {
@@ -113,6 +157,11 @@ public class MainActivity extends Activity {
         }
     }
 
+    /**
+     * Prints a toast message depending on what error code has been passed.
+     *
+     * @param result Error code
+     */
     private void error(int result) {
         if (result == 1) {
             Toast.makeText(getApplicationContext(), "1st Lock Position can not be empty.", Toast.LENGTH_SHORT).show();
