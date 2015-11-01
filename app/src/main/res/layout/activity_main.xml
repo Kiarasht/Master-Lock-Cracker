@@ -98,30 +98,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/r5c1"
+        android:layout_alignStart="@+id/r6c2"
         android:layout_toEndOf="@+id/r3c1"
         android:ems="10"
-        android:inputType="number"
-        android:layout_alignStart="@+id/r6c2" />
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/r6c1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/r6c1"
-        android:textAppearance="?android:attr/textAppearanceMedium"
         android:layout_alignBottom="@+id/r6c2"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:text="@string/r6c1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/r6c2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="61dp"
-        android:ems="10"
-        android:inputType="number"
-        android:layout_below="@+id/r5c2"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/space2" />
+        android:layout_below="@+id/r5c2"
+        android:layout_marginTop="61dp"
+        android:layout_toEndOf="@+id/space2"
+        android:ems="10"
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/r7c1"
